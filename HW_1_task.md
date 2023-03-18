@@ -6,7 +6,8 @@
 |:----:|:----:|
 |Protocol|http|
 |IP|162.55.220.72|
-|Port| 5005| 
+|Port| 5005|
+
 ---
 ### EP_1  
 Method: `GET`  
@@ -20,8 +21,8 @@ response:
     “Str”,  
     “Str”  
 ]  
----
 
+---
 ### EP_2
 Method: `POST`
 EndPoint: */user_info_3*  
@@ -36,6 +37,7 @@ response:
           'salary': salary,  
           'family': {'children': [['Alex', 24], ['Kate', 12]],  
                    'u_salary_1_5_year': salary * 4}}  
+
 ---
 ### EP_3
 Method: `GET`
@@ -50,6 +52,7 @@ response:
           'age': age,  
           'daily_food': weight * 0.012,  
           'daily_sleep': weight * 2.5}   
+
 ---
 ### EP_4
 Method: `GET`  
@@ -69,6 +72,7 @@ response:
                      'u_age': age,
                      'u_salary_5_years': salary * 4.2}
           }
+
 ---
 ### EP_5  
 Method: `GET`  
@@ -89,6 +93,7 @@ response:
                                      'age': 4}},  
                      'u_salary_1_5_year': salary * 4}  
           }  
+
 ---
 ### EP_6
 Method: `GET`  
