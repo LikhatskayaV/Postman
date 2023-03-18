@@ -101,7 +101,8 @@ request url params:
 response:  
 {'name': name,  
           'age': int(age),  
-          'salary': [salary, str(salary * 2), str(salary * 3)]}  
+          'salary': [salary, str(salary * 2), str(salary * 3)]}
+
 ---
 ### EP_7
 Method: `POST`  
