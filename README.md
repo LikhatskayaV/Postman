@@ -2,10 +2,12 @@
 	<body>
 	<a href="https://github.com/LikhatskayaV"> 
 		<img src="https://blog.postman.com/wp-content/uploads/2020/03/api-clients.png" 
-		<svg height="60" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="60" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
+		<svg height="100" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="150" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
     </svg>
     </a>
 	</body>    </html>
+	
+	
 ![all text](https://blog.postman.com/wp-content/uploads/2020/03/api-clients.png)
 
 **Postman** — это **HTTP-клиент** для тестирования **API**. HTTP-клиенты тестируют отправку запросов с клиента на сервер и получение ответа от сервера. API (Application Programming Interface) — это интерфейс для обмена данными с сервера между двумя приложениями или компонентами ПО.
