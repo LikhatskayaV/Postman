@@ -10,10 +10,10 @@
 
 ### EP_1
 Method: `GET`
-EndPoint: /get_method
+EndPoint: **/get_method**
 request url params: 
- name: str
- age: int
+       - name: str
+       - age: int
 
 response: 
 [
