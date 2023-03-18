@@ -55,13 +55,13 @@ response:
 
 ==================
 
-EP_4
-Method: GET
-EndPoint: /object_info_2
+### EP_4
+Method: `GET`
+EndPoint: **/object_info_2**
 request url params: 
- name: str
- age: int
- salary: int
+-name: str
+-age: int
+-salary: int
 
 response: 
 {'start_qa_salary': salary,
@@ -77,13 +77,13 @@ response:
 
 ==================
 
-EP_5
-Method: GET
+### EP_5
+Method: `GET`
 EndPoint: /object_info_3
 request url params: 
- name: str
- age: int
- salary: int
+-name: str
+-age: int
+-salary: int
 
 response: 
 {'name': name,
@@ -98,15 +98,13 @@ response:
           }
 
 
-==================
-
-EP_6
-Method: GET
-EndPoint: /object_info_4
+### EP_6
+Method: 'GET'
+EndPoint: **/object_info_4**
 request url params: 
- name: str
- age: int
- salary: int
+-name: str
+-age: int
+-salary: int
 
 response: 
 {'name': name,
@@ -114,15 +112,13 @@ response:
           'salary': [salary, str(salary * 2), str(salary * 3)]}
 
 
-==================
-
-EP_7
-Method: POST
-EndPoint: /user_info_2
+### EP_7
+Method: `POST`
+EndPoint: **/user_info_2**
 request form data: 
- name: str
- age: int
- salary: int
+-name: str
+-age: int
+-salary: int
 
 response: 
 {'start_qa_salary': salary,
