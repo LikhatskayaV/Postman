@@ -77,9 +77,9 @@ response:
 Method: `GET`  
 EndPoint: */object_info_3*  
 request url params:  
--name: str  
--age: int  
--salary: int  
+- name: str  
+- age: int  
+- salary: int  
 
 response:  
 {'name': name,  
