@@ -1,0 +1,535 @@
+{
+	"info": {
+		"_postman_id": "e4e885b6-2a54-4326-9340-3170698f8db9",
+		"name": "HW***",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20954104",
+		"_collection_link": "https://orange-resonance-601815.postman.co/workspace/Screening_Posman~55480f4c-9161-4905-87c7-086dc278c5f9/collection/20954104-e4e885b6-2a54-4326-9340-3170698f8db9?action=share&creator=20954104&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "***_22user_info_2 Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// http://162.55.220.72:5005/user_info_2\r",
+							"// 1. Вставить параметр salary из окружения в request\r",
+							"// 2. Вставить параметр age из окружения в age\r",
+							"// 3. Вставить параметр name из окружения в name\r",
+							"// 4. Отправить запрос.\r",
+							"// 5. Статус код 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"// 6. Спарсить response body в json.\r",
+							"    var respData = pm.response.json();\r",
+							"    // console.log(respData);\r",
+							"\r",
+							"// 7. Спарсить request.\r",
+							"var reqData = request.data;\r",
+							"// console.log(reqData);\r",
+							"\r",
+							"// 8. Проверить, что json response имеет параметр start_qa_salary\r",
+							"pm.test(\"json response имеет параметр start_qa_salary\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"start_qa_salary\");\r",
+							"});\r",
+							"// 9. Проверить, что json response имеет параметр qa_salary_after_6_months\r",
+							"pm.test(\"json response имеет параметр qa_salary_after_6_months\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"qa_salary_after_6_months\");\r",
+							"});\r",
+							"// 10. Проверить, что json response имеет параметр qa_salary_after_12_months\r",
+							"pm.test(\"json response имеет параметр qa_salary_after_12_months\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"qa_salary_after_12_months\");\r",
+							"});\r",
+							"\r",
+							"// 11. Проверить, что json response имеет параметр qa_salary_after_1.5_year\r",
+							"pm.test(\"json response имеет параметр qa_salary_after_1\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"qa_salary_after_1\");\r",
+							"});\r",
+							"// 12. Проверить, что json response имеет параметр qa_salary_after_3.5_years\r",
+							"pm.test(\"json response имеет параметр qa_salary_after_3\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"qa_salary_after_3\");\r",
+							"});\r",
+							"\r",
+							"// 13. Проверить, что json response имеет параметр person\r",
+							"pm.test(\"json response имеет параметр person\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"person\");\r",
+							"});\r",
+							"// 14. Проверить, что параметр start_qa_salary равен salary из request (salary забрать из request.)\r",
+							"pm.test(\"параметр start_qa_salary равен salary из request\", function () {\r",
+							"    pm.expect(respData.start_qa_salary).to.eql(+reqData.salary);\r",
+							"});\r",
+							"\r",
+							"// console.log(+reqData.salary);\r",
+							"// console.log(respData.start_qa_salary);\r",
+							"\r",
+							"// 15. Проверить, что параметр qa_salary_after_6_months равен salary*2 из request (salary забрать из request.)\r",
+							"pm.test(\"параметр qa_salary_after_6_months равен salary*2\", function () {\r",
+							"    pm.expect(respData.qa_salary_after_6_months).to.eql(+reqData.salary*2);\r",
+							"});\r",
+							"\r",
+							"// console.log(+reqData.salary*2);\r",
+							"// console.log(respData.qa_salary_after_6_months);\r",
+							"\r",
+							"// 16. Проверить, что параметр qa_salary_after_12_months равен salary*2.7 из request (salary забрать из request.)\r",
+							"pm.test(\"qa_salary_after_12_months равен salary*2.7 из request \", function () {\r",
+							"    pm.expect(respData.qa_salary_after_12_months).to.eql(+reqData.salary*2.7);\r",
+							"});\r",
+							"\r",
+							"// console.log(+reqData.salary*2.7);\r",
+							"// console.log(respData.qa_salary_after_12_months);\r",
+							"\r",
+							"// 17. Проверить, что параметр qa_salary_after_1.5_year равен salary*3.3 из request (salary забрать из request.)\r",
+							"pm.test(\"параметр qa_salary_after_1.5_year равен salary*3.3 из request \", function () {\r",
+							"    pm.expect(respData[\"qa_salary_after_1.5_year\"]).to.eql(+reqData.salary*3.3);\r",
+							"});\r",
+							"\r",
+							"// console.log(+reqData.salary*3.3);\r",
+							"// console.log(respData[\"qa_salary_after_1.5_year\"]);\r",
+							"\r",
+							"// 18. Проверить, что параметр qa_salary_after_3.5_years равен salary*3.8 из request (salary забрать из request.)\r",
+							"pm.test(\"параметр qa_salary_after_3.5_years равен salary*3.8 из request \", function () {\r",
+							"    pm.expect(respData[\"qa_salary_after_3.5_years\"]).to.eql(+reqData.salary*3.8);\r",
+							"});\r",
+							"\r",
+							"// console.log(+reqData.salary*3.8);\r",
+							"// console.log(respData[\"qa_salary_after_3.5_years\"]);\r",
+							"\r",
+							"// 19. Проверить, что в параметре person, 1-й элемент из u_name равен salary из request (salary забрать из request.)\r",
+							"pm.test(\" параметре person, 1-й элемент из u_name равен salary из request\", function () {\r",
+							"    pm.expect(respData.person.u_name[1]).to.eql(+reqData.salary);\r",
+							"});\r",
+							"// console.log(respData.person.u_name[1]);\r",
+							"// console.log(+reqData.salary);\r",
+							"\r",
+							"// 20. Проверить, что что параметр u_age равен age из request (age забрать из request.)\r",
+							"pm.test(\"параметр u_age равен age из request\", function () {\r",
+							"    pm.expect(respData.person.u_age).to.eql(+reqData.age);\r",
+							"});\r",
+							"// console.log(respData.person.u_age);\r",
+							"// console.log(+reqData.age);\r",
+							"\r",
+							"\r",
+							"// 21. Проверить, что параметр u_salary_5_years равен salary*4.2 из request (salary забрать из request.)\r",
+							"pm.test(\"параметр u_salary_5_years равен salary*4.2 из request (salary забрать из request\", function () {\r",
+							"    pm.expect(respData.person.u_salary_5_years).to.eql(+reqData.salary*4.2);\r",
+							"});\r",
+							"\r",
+							"// console.log(+reqData.salary*4.2);\r",
+							"// console.log(respData.person.u_salary_5_years);\r",
+							"\r",
+							"// 22. ***Написать цикл который выведет в консоль по порядку элементы списка из параметра person.\r",
+							"// var person = (Object.keys(respData.person));\r",
+							"// for(var i = 0; i < 3; i++){\r",
+							"// console.log(person[i]) };\r",
+							"// или\r",
+							"// for (var key in respData.person) {\r",
+							"//     console.log( key +\":\" + respData.person[key])\r",
+							"// };\r",
+							"// или\r",
+							"for (var key in respData.person) {\r",
+							"    console.log( key.concat(\":\"+respData.person[key]))\r",
+							"};\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{name}}",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "{{age}}",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "{{salary}}",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5005/user_info_2",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login***",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// =====\r",
+							"\r",
+							"// 1) необходимо залогиниться\r",
+							"// POST\r",
+							"// http://162.55.220.72:5005/login\r",
+							"// login : str (кроме /)\r",
+							"// password : str\r",
+							"\r",
+							"// Приходящий токен необходимо передать во все остальные запросы.\r",
+							"\r",
+							"// ===================\r",
+							"// дальше все запросы требуют наличие токена.\r",
+							"// ===================\r",
+							"\r",
+							"\r",
+							"respData = JSON.parse(responseBody);\r",
+							"console.log(respData);\r",
+							"\r",
+							"\r",
+							"pm.environment.set(\"token\", respData.token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://162.55.220.72:5005/login?login=ViVi&password=5r578",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "login",
+							"value": "ViVi"
+						},
+						{
+							"key": "password",
+							"value": "5r578"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currency",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 6) http://162.55.220.72:5005/currency(НЕ РАБОТАЕТ endpoit взяла из чата)\r",
+							"// req.\r",
+							"// POST\r",
+							"// auth_token\r",
+							"\r",
+							"// Тесты:\r",
+							"// 1) Можете взять любой объект из присланного списка, используйте js random.\r",
+							"// В объекте возьмите Cur_ID и передать через окружение в следующий запрос.\r",
+							"//  ===================\r",
+							"// https://qna.habr.com/q/404000  js скрип для генирации рандомных значений в POST метод\r",
+							"var respData = pm.response.json();\r",
+							"\r",
+							"var randomCur_object = Math.floor(Math.random() * (respData.length+1));\r",
+							"// console.log(randomCur_object);\r",
+							"\r",
+							"// console.log(respData[randomCur_object]);\r",
+							"\r",
+							"var env_Cur_ID = respData[randomCur_object].Cur_ID;\r",
+							"// console.log(env_Cur_ID);\r",
+							"\r",
+							"pm.environment.set(\"Cur_ID\", env_Cur_ID);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://54.157.99.22:80/currency",
+					"protocol": "http",
+					"host": [
+						"54",
+						"157",
+						"99",
+						"22"
+					],
+					"port": "80",
+					"path": [
+						"currency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currency ***",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// ***\r",
+							"// 1) получить список валют \r",
+							"// console.log(respData);\r",
+							"//  ===== получили этот список в ответе\r",
+							"var respData = pm.response.json();\r",
+							"// console.log(respData[0]);\r",
+							"// console.log(respData[0].Cur_ID);\r",
+							"// var Cur_ID_send_request = respData[i].Cur_ID;\r",
+							"var token_sr = pm.environment.get(\"token\");\r",
+							"// console.log(token_sr);\r",
+							"\r",
+							"// 2) итерировать список валют\r",
+							"\r",
+							"for( i = 0; i < respData.length; i++ ){\r",
+							"    const curr_bynPostRequest = {\r",
+							"    url: 'http://54.157.99.22:80/curr_byn',\r",
+							"    method: 'POST',\r",
+							"    header: {\"Content-Type\": \"application/json\"},\r",
+							"    body:{ \r",
+							"        mode: 'formdata',\r",
+							"        formdata: [\r",
+							"            {key: 'auth_token', value: token_sr},\r",
+							"            {key: 'curr_code', value: String(respData[i].Cur_ID)}\r",
+							"                  ],\r",
+							"        }\r",
+							"                            };\r",
+							"// 3) в каждой итерации отправлять запрос на сервер для получения курса каждой валюты\r",
+							"    pm.sendRequest(curr_bynPostRequest, function (err, response) {\r",
+							"        // console.log(response.json());\r",
+							"        var respCurr_byn = response.json();\r",
+							"        // 4) если возвращается 500 код, переходим к следующей итреации\r",
+							"        if (response.code === 500){\r",
+							"        console.log(err);\r",
+							"    } else if (response.code === 200){\r",
+							"        // 5) если получаем 200 код, проверяем response json на наличие поля \"Cur_OfficialRate\" \r",
+							"        if(respCurr_byn.hasOwnProperty(\"Cur_OfficialRate\")){\r",
+							"// 6) если поле есть, пишем в консоль инфу про фалюту в виде response\r",
+							"// {\r",
+							"//     \"Cur_Abbreviation\": str\r",
+							"//     \"Cur_ID\": int,\r",
+							"//     \"Cur_Name\": str,\r",
+							"//     \"Cur_OfficialRate\": float,\r",
+							"//     \"Cur_Scale\": int,\r",
+							"//     \"Date\": str\r",
+							"// }\r",
+							"            console.log('info =', respCurr_byn); }\r",
+							"        // или  \r",
+							"        // if (\"Cur_OfficialRate\" in respCurr_byn){\r",
+							"        //     console.log('info =', respCurr_byn)\r",
+							"        // }\r",
+							"  \r",
+							"    }});\r",
+							"}   \r",
+							"// =================\r",
+							"// 7) переходим к следующей итерации\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://54.157.99.22:80/currency",
+					"protocol": "http",
+					"host": [
+						"54",
+						"157",
+						"99",
+						"22"
+					],
+					"port": "80",
+					"path": [
+						"currency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "curr_byn",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 7) http://162.55.220.72:5005/curr_byn\r",
+							"// req.\r",
+							"// POST\r",
+							"// auth_token\r",
+							"// curr_code: int\r",
+							"\r",
+							"// Resp.\r",
+							"// {\r",
+							"//     \"Cur_Abbreviation\": str\r",
+							"//     \"Cur_ID\": int,\r",
+							"//     \"Cur_Name\": str,\r",
+							"//     \"Cur_OfficialRate\": float,\r",
+							"//     \"Cur_Scale\": int,\r",
+							"//     \"Date\": str\r",
+							"// }\r",
+							"\r",
+							"// Тесты:\r",
+							"// 1) Статус код 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"// 2) Проверка структуры json в ответе.\r",
+							"\r",
+							"var schema = {\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"Cur_Abbreviation\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"Cur_ID\": {\r",
+							"      \"type\": \"integer\"\r",
+							"    },\r",
+							"    \"Cur_Name\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"Cur_OfficialRate\": {\r",
+							"      \"type\": \"number\"\r",
+							"    },\r",
+							"    \"Cur_Scale\": {\r",
+							"      \"type\": \"integer\"\r",
+							"    },\r",
+							"    \"Date\": {\r",
+							"      \"type\": \"string\"\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"Cur_Abbreviation\",\r",
+							"    \"Cur_ID\",\r",
+							"    \"Cur_Name\",\r",
+							"    \"Cur_OfficialRate\",\r",
+							"    \"Cur_Scale\",\r",
+							"    \"Date\"\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"pm.test(\"Проверка структуры json в ответе\", () =>\r",
+							"{pm.response.to.have.jsonSchema(schema);});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"// var token = pm.environment.get(token);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "curr_code",
+							"value": "{{Cur_ID}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://54.157.99.22:80/curr_byn",
+					"protocol": "http",
+					"host": [
+						"54",
+						"157",
+						"99",
+						"22"
+					],
+					"port": "80",
+					"path": [
+						"curr_byn"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
